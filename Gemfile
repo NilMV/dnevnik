@@ -10,6 +10,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'webpacker'
 gem 'jbuilder', '~> 2.5'
+gem "rails-settings-cached"
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
