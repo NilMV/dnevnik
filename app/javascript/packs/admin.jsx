@@ -1,22 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import adminStore from '../stores/adminStore';
+import TopBar from '../containers/ToolBar';
 
-const Hello = props => (
-  <div>Hello {props.name}!</div>
-)
-
-Hello.defaultProps = {
-  name: 'David'
+class App extends React.Component {
+  render(){
+    return <TopBar />
+  }
 }
 
-Hello.propTypes = {
-  name: PropTypes.string
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello name="React" />,
+    <Provider store={adminStore}>
+      <App />
+    </Provider>,
     document.getElementById('app'),
   )
 })
