@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import adminStore from '../stores/adminStore';
-import TopBar from '../containers/ToolBar';
+import TopBar from '../containers/TopBar';
 
 class App extends React.Component {
   render(){
