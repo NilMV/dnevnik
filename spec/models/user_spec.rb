@@ -5,18 +5,18 @@ RSpec.describe User, type: :model do
     it 'add a new role for a user' do
       user = User.create
       user.add_role('student')
-      expect(user.roles.count).to eq(1)
+      expect(user.roles.size).to eq(1)
     end
     it 'doesnt add already existing role' do
       user = User.create
       user.add_role('student')
       user.add_role('student')
-      expect(user.roles.count).to eq(1)
+      expect(user.roles.size).to eq(1)
     end
-    it 'does not add not existing role' do
+    it 'does not add  unexisting role' do
       user = User.create
       user.add_role('choosen')
-      expect(user.roles.count()).to eq(0)
+      expect(user.roles.size).to eq(0)
     end
   end
 
@@ -26,14 +26,14 @@ RSpec.describe User, type: :model do
         user = User.create
         user.add_role('student')
         user.remove_role('student')
-        expect(user.roles.count).to eq(0)        
+        expect(user.roles.size).to eq(0)        
       end
     end
     context 'role does not exists for user' do
       it 'does nothing' do
         user = User.create
         user.remove_role('student')
-        expect(user.roles.count).to eq(0)   
+        expect(user.roles.size).to eq(0)   
       end
     end
   end
