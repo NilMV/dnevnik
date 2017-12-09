@@ -14,11 +14,11 @@ RSpec.describe RoleSelector do
       expect { service.call([]) }.to broadcast(:none)
     end
 
-    #Role::KINDS.each do |kind|
-    #  it "broadcast #{kind} role" do 
-    #    service = RoleSelector.new
-    #    expect { service.call([kind]) }.to broadcast(kind.to_sym)
-    #  end
-    #end
+    User::ROLE_KINDS.each do |kind|
+      it "broadcast #{kind} role" do 
+        service = RoleSelector.new
+        expect { service.call([kind]) }.to broadcast(kind.to_sym)
+      end
+    end
   end
 end
